@@ -1,0 +1,12 @@
+version: '3.3'
+
+services:
+  hbackup:
+    build: ./hbackup
+    ports:
+      - "5002:5002"
+    environment:
+      - FILES_TO_BACKUP=/etc/NetworkManager/dnsmasq.d/fdlbox.conf
+      - HOSTNAME=examplehostname #will be used for .tar naming
+    volumes:
+      - /etc:/host_machine/etc
