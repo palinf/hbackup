@@ -2,7 +2,9 @@ version: '3.3'
 
 services:
   hbackup:
-    build: ./hbackup
+    #build: ./hbackup
+    build:
+      context: https://github.com/palinf/hbackup.git
     ports:
       - "5002:5002"
     environment:
